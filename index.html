@@ -10,7 +10,7 @@
         * {
             margin: 0;
             padding: 0;
-            box-box-sizing: border-box;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
@@ -22,7 +22,7 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
-        /* Layout Limit (Screenshot ki tarah perfect vertical block) */
+        /* Layout Limit (Vertical block like screenshot) */
         .main-container {
             width: 100%;
             max-width: 600px;
@@ -111,46 +111,36 @@
             margin-right: 8px;
             color: #e50914;
         }
-        /* Vertical Working Links Buttons (Screenshot Pattern) */
-        .grid-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            width: 100%;
-            margin-top: 15px;
-        }
-        .grid-item {
+        /* DOWNLOAD APK ACTIVE LINK */
+        .grid-item-link {
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            padding: 16px 20px;
+            padding: 20px 20px;
             border-radius: 15px;
             color: white;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: transform 0.2s, filter 0.2s;
+            font-weight: 700;
+            font-size: 18px;
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
+            box-shadow: 0 4px 20px rgba(231, 76, 60, 0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px 0;
         }
-        .grid-item:hover {
-            transform: scale(1.02);
-            filter: brightness(1.2);
+        .grid-item-link:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 25px rgba(231, 76, 60, 0.7);
         }
-        .grid-item span {
-            font-size: 11px;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 3px 8px;
+        .grid-item-link span {
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 4px 10px;
             border-radius: 5px;
             display: block;
             margin-bottom: 4px;
             width: fit-content;
         }
-        /* Button Custom Backgrounds */
-        .bg-vegamovies { background: linear-gradient(135deg, #27ae60, #2ecc71); }
-        .bg-rogmovies { background: linear-gradient(135deg, #2980b9, #3498db); }
-        .bg-anime { background: linear-gradient(135deg, #16a085, #1abc9c); }
-        .bg-luxmovies { background: linear-gradient(135deg, #d35400, #e67e22); }
-        .bg-desi { background: linear-gradient(135deg, #c0392b, #e74c3c); }
         
         /* Features List */
         .features-list {
@@ -256,50 +246,16 @@
 
         <div class="content-box">
             <div class="section-title">
-                <i class="fas fa-link"></i> Currently Working Links
+                <i class="fas fa-download"></i> Application Download
             </div>
 
-            <div class="grid-container">
-                <a href="#" class="grid-item bg-vegamovies">
-                    <div>
-                        <span>Vegamovies</span>
-                        <i class="fas fa-film"></i> Hollywood - Vegamovies
-                    </div>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-
-                <a href="#" class="grid-item bg-rogmovies">
-                    <div>
-                        <span>RogMovies</span>
-                        <i class="fas fa-video"></i> Bollywood - Rogmovies
-                    </div>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-
-                <a href="#" class="grid-item bg-anime">
-                    <div>
-                        <span>GokuHD</span>
-                        <i class="fas fa-bolt"></i> Anime Content
-                    </div>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-
-                <a href="#" class="grid-item bg-luxmovies">
-                    <div>
-                        <span>LuxMovies</span>
-                        <i class="fas fa-clapperboard"></i> Bollywood - Luxmovies
-                    </div>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-
-                <a href="#" class="grid-item bg-desi">
-                    <div>
-                        <span>Official Player</span>
-                        <i class="fas fa-download"></i> Download APK (Local Media Player)
-                    </div>
-                    <i class="fas fa-arrow-circle-down"></i>
-                </a>
-            </div>
+            <a href="https://pool-apks-aptoide-connect.aptoide.com/apk/com-vegamovies-app-1_b1264f16766643773513598e19d40a98.apk" class="grid-item-link">
+                <div>
+                    <span>Official Release</span>
+                    <i class="fas fa-download"></i> Download APK (Local Media Player)
+                </div>
+                <i class="fas fa-arrow-circle-down" style="font-size: 24px; animation: bounce 2s infinite;"></i>
+            </a>
         </div>
 
         <div class="content-box" style="padding-top: 0;">
@@ -323,10 +279,17 @@
 
         <footer>
             <p>2020-2026 © Vegamovies | All rights reserved.</p>
-            <a href="#privacy-policy-modal" onclick="alert('Privacy Policy:\n\nThis landing page functions solely as an indexing platform and local media utility connector. We do not host malicious code or breach device guidelines. User data protection and network handling conform strictly to basic standard encryption algorithms.'); return false;">Privacy Policy</a>
+            <a href="/privacy-policy">Privacy Policy</a>
         </footer>
 
     </div>
 
+    <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-6px); }
+            60% { transform: translateY(-3px); }
+        }
+    </style>
 </body>
 </html>
