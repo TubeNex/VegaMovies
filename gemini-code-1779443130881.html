@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegamovies - Ultimate Hub for 4K Movies & Local Media Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styling & Dark Theme */
+        * {
+            margin: 0;
+            padding: 0;
+            box-box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0d0f12;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        /* Layout Limit (Screenshot ki tarah perfect vertical block) */
+        .main-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #161a20;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 30px;
+        }
+        /* Ad Banner Placeholder Styles */
+        .ad-space {
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0b0d10;
+            margin: 15px 0;
+            min-height: 60px;
+        }
+        /* Header Section */
+        header {
+            width: 100%;
+            background: linear-gradient(135deg, #1f0505 0%, #0d0f12 100%);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 2px solid #e50914;
+        }
+        header h1 {
+            color: #e50914;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        header p {
+            color: #cccccc;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        /* Telegram Button Style */
+        .tg-btn-container {
+            width: 100%;
+            padding: 0 20px;
+            margin: 20px 0;
+        }
+        .telegram-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background: linear-gradient(to right, #0088cc, #00a6ff);
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 15px;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+            transition: 0.3s ease;
+        }
+        .telegram-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.6);
+        }
+        .telegram-btn i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        /* Content Section */
+        .content-box {
+            width: 100%;
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+        .section-title i {
+            margin-right: 8px;
+            color: #e50914;
+        }
+        /* Vertical Working Links Buttons (Screenshot Pattern) */
+        .grid-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .grid-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, filter 0.2s;
+        }
+        .grid-item:hover {
+            transform: scale(1.02);
+            filter: brightness(1.2);
+        }
+        .grid-item span {
+            font-size: 11px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 3px 8px;
+            border-radius: 5px;
+            display: block;
+            margin-bottom: 4px;
+            width: fit-content;
+        }
+        /* Button Custom Backgrounds */
+        .bg-vegamovies { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+        .bg-rogmovies { background: linear-gradient(135deg, #2980b9, #3498db); }
+        .bg-anime { background: linear-gradient(135deg, #16a085, #1abc9c); }
+        .bg-luxmovies { background: linear-gradient(135deg, #d35400, #e67e22); }
+        .bg-desi { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+        
+        /* Features List */
+        .features-list {
+            background-color: #1c2129;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 13px;
+            color: #aaaaaa;
+        }
+        .feature-item i {
+            color: #2ecc71;
+            margin-right: 10px;
+        }
+        /* Popular Searching Terms */
+        .terms-box {
+            text-align: center;
+            padding: 20px;
+            background-color: #11141a;
+            border-top: 1px solid #222;
+            width: 100%;
+        }
+        .terms-box h4 {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        .terms-box p {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.5;
+        }
+        /* Footer & Privacy Policy Link */
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            font-size: 11px;
+            color: #666;
+            background-color: #0b0d10;
+        }
+        footer a {
+            color: #999;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        footer a:hover {
+            color: #e50914;
+        }
+    </style>
+
+    <script async src="https://js.onclckmn.com/static/onclicka.js" data-admpid="440407"></script>
+    <script async src="https://js.onclckmn.com/static/onclicka.js" data-admpid="440619"></script>
+    <script async src="https://js.onclckmn.com/static/onclicka.js" data-admpid="440729"></script>
+    <script async src="https://js.onclckmn.com/static/onclicka.js" data-admpid="440730"></script>
+    <script async src="https://js.onclckmn.com/static/onclicka.js" data-admpid="440731"></script>
+    <script async src="https://js.onclckmn.com/static/onclicka.js" data-admpid="440732"></script>
+    <script async src="https://js.onclckmn.com/static/onclicka.js" data-admpid="440733"></script>
+    <script async src="https://js.onclckmn.com/static/onclicka.js" data-admpid="441282"></script>
+
+    <script src="https://valuedcowboysample.com/40/01/1f/40011f4aead6dd58eb143db0e7191d31.js"></script>
+    <script src="https://valuedcowboysample.com/38/97/f7/3897f7026a63974b6767973f1dea7d96.js"></script>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <div class="ad-space">
+            <script>
+              atOptions = {
+                'key' : '7ab107bcbefd82107f63244162fad1c3',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+              };
+            </script>
+            <script src="https://valuedcowboysample.com/7ab107bcbefd82107f63244162fad1c3/invoke.js"></script>
+        </div>
+
+        <header>
+            <h1>Vegamovies</h1>
+            <p><strong>Ultimate Hub for 4K Movies & Series</strong><br>
+            Download the latest Hollywood, Bollywood and New Releases Blockbusters Movies / WEB-Series in 480p, 720p, 1080p, and ultra 4K quality seamlessly.</p>
+        </header>
+
+        <div class="tg-btn-container">
+            <a href="https://t.me/+9noaJdQVRX4zM2Nl" class="telegram-btn" target="_blank">
+                <i class="fab fa-telegram-plane"></i> Join Our Telegram Channel
+            </a>
+        </div>
+
+        <div class="ad-space">
+            <script async="async" data-cfasync="false" src="https://valuedcowboysample.com/09086a3f344c78a5b4301368b2254a4e/invoke.js"></script>
+            <div id="container-09086a3f344c78a5b4301368b2254a4e"></div>
+        </div>
+
+        <div class="content-box">
+            <div class="section-title">
+                <i class="fas fa-link"></i> Currently Working Links
+            </div>
+
+            <div class="grid-container">
+                <a href="#" class="grid-item bg-vegamovies">
+                    <div>
+                        <span>Vegamovies</span>
+                        <i class="fas fa-film"></i> Hollywood - Vegamovies
+                    </div>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+
+                <a href="#" class="grid-item bg-rogmovies">
+                    <div>
+                        <span>RogMovies</span>
+                        <i class="fas fa-video"></i> Bollywood - Rogmovies
+                    </div>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+
+                <a href="#" class="grid-item bg-anime">
+                    <div>
+                        <span>GokuHD</span>
+                        <i class="fas fa-bolt"></i> Anime Content
+                    </div>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+
+                <a href="#" class="grid-item bg-luxmovies">
+                    <div>
+                        <span>LuxMovies</span>
+                        <i class="fas fa-clapperboard"></i> Bollywood - Luxmovies
+                    </div>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+
+                <a href="#" class="grid-item bg-desi">
+                    <div>
+                        <span>Official Player</span>
+                        <i class="fas fa-download"></i> Download APK (Local Media Player)
+                    </div>
+                    <i class="fas fa-arrow-circle-down"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="content-box" style="padding-top: 0;">
+            <div class="section-title">
+                <i class="fas fa-info-circle"></i> About Vegamovies Player
+            </div>
+            <p style="font-size: 13px; color: #999; line-height: 1.6; margin-bottom: 10px;">
+                Vegamovies brings you an advanced Local Media Player layout capable of rendering all premium dynamic media formats. Enjoy lag-free playback for 4K Ultra HD videos, MKV streams, MP4 encodings, and professional audio.
+            </p>
+            <div class="features-list">
+                <div class="feature-item"><i class="fas fa-check-circle"></i> Supports .mkv, .mp4, .avi, .zip video streaming</div>
+                <div class="feature-item"><i class="fas fa-check-circle"></i> Built-in Hardware Acceleration for Smooth 4K Processing</div>
+                <div class="feature-item"><i class="fas fa-check-circle"></i> Smart background network handling for dynamic content token paths</div>
+            </div>
+        </div>
+
+        <div class="terms-box">
+            <h4>Popular Searching Terms</h4>
+            <p>Vegamovies, Vegamovies official website, Bollywood movies download, Hollywood 4K movies, Vegamovies 2026 releases, Dual Audio movies 720p, Vegamovies dot is, Vegamovies proxy links, local media player apk.</p>
+        </div>
+
+        <footer>
+            <p>2020-2026 © Vegamovies | All rights reserved.</p>
+            <a href="#privacy-policy-modal" onclick="alert('Privacy Policy:\n\nThis landing page functions solely as an indexing platform and local media utility connector. We do not host malicious code or breach device guidelines. User data protection and network handling conform strictly to basic standard encryption algorithms.'); return false;">Privacy Policy</a>
+        </footer>
+
+    </div>
+
+</body>
+</html>
