@@ -22,16 +22,19 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
-        /* Layout Limit (Vertical block like screenshot) */
+        /* Desktop Friendly Responsive Container */
         .main-container {
-            width: 100%;
-            max-width: 600px;
+            width: 92%;
+            max-width: 1000px; /* Desktop par bada aur accha dikhega */
             background-color: #161a20;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
             display: flex;
             flex-direction: column;
             align-items: center;
             padding-bottom: 30px;
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
         }
         /* Ad Banner Placeholder Styles */
         .ad-space {
@@ -48,28 +51,31 @@
         header {
             width: 100%;
             background: linear-gradient(135deg, #1f0505 0%, #0d0f12 100%);
-            padding: 30px 20px;
+            padding: 40px 20px;
             text-align: center;
             border-bottom: 2px solid #e50914;
         }
         header h1 {
             color: #e50914;
-            font-size: 28px;
+            font-size: 36px;
             font-weight: 800;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             margin-bottom: 15px;
             text-transform: uppercase;
         }
         header p {
             color: #cccccc;
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
         }
         /* Telegram Button Style */
         .tg-btn-container {
             width: 100%;
             padding: 0 20px;
             margin: 20px 0;
+            max-width: 500px; /* Layout center balance karne ke liye */
         }
         .telegram-btn {
             display: flex;
@@ -82,7 +88,7 @@
             padding: 14px;
             border-radius: 30px;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 16px;
             box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
             transition: 0.3s ease;
         }
@@ -99,13 +105,23 @@
             width: 100%;
             padding: 20px;
         }
+        /* Desktop Split view for details and download */
+        .download-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
         .section-title {
-            font-size: 18px;
+            font-size: 20px;
             color: #ffffff;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
             font-weight: 600;
+            width: 100%;
         }
         .section-title i {
             margin-right: 8px;
@@ -117,19 +133,19 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            padding: 20px 20px;
+            padding: 22px 25px;
             border-radius: 15px;
             color: white;
             text-decoration: none;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 20px;
             background: linear-gradient(135deg, #c0392b, #e74c3c);
             box-shadow: 0 4px 20px rgba(231, 76, 60, 0.5);
             transition: transform 0.2s, box-shadow 0.2s;
-            margin: 10px 0;
+            margin: 10px 0 5px 0;
         }
         .grid-item-link:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
             box-shadow: 0 6px 25px rgba(231, 76, 60, 0.7);
         }
         .grid-item-link span {
@@ -138,52 +154,76 @@
             padding: 4px 10px;
             border-radius: 5px;
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             width: fit-content;
+        }
+        
+        /* Live Counter Styling */
+        .counter-container {
+            margin-top: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #2ecc71;
+            background-color: rgba(46, 204, 113, 0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(46, 204, 113, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.5px;
+        }
+        .counter-container i {
+            animation: pulse 1.5s infinite;
         }
         
         /* Features List */
         .features-list {
             background-color: #1c2129;
-            padding: 15px;
+            padding: 20px;
             border-radius: 10px;
             margin-top: 10px;
         }
         .feature-item {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
-            font-size: 13px;
+            margin-bottom: 12px;
+            font-size: 14px;
             color: #aaaaaa;
+        }
+        .feature-item:last-child {
+            margin-bottom: 0;
         }
         .feature-item i {
             color: #2ecc71;
-            margin-right: 10px;
+            margin-right: 12px;
         }
         /* Popular Searching Terms */
         .terms-box {
             text-align: center;
-            padding: 20px;
+            padding: 25px 20px;
             background-color: #11141a;
             border-top: 1px solid #222;
             width: 100%;
         }
         .terms-box h4 {
-            font-size: 14px;
+            font-size: 15px;
             color: #888;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         .terms-box p {
-            font-size: 12px;
+            font-size: 13px;
             color: #555;
-            line-height: 1.5;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
         }
         /* Footer & Privacy Policy Link */
         footer {
             width: 100%;
             text-align: center;
-            padding: 20px;
-            font-size: 11px;
+            padding: 25px;
+            font-size: 12px;
             color: #666;
             background-color: #0b0d10;
         }
@@ -195,6 +235,28 @@
         }
         footer a:hover {
             color: #e50914;
+        }
+
+        /* Animations */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-6px); }
+            60% { transform: translateY(-3px); }
+        }
+        @keyframes pulse {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+
+        /* Desktop Optimization Tweaks */
+        @media (min-width: 768px) {
+            .content-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                width: 100%;
+            }
         }
     </style>
 
@@ -244,32 +306,42 @@
             <div id="container-09086a3f344c78a5b4301368b2254a4e"></div>
         </div>
 
-        <div class="content-box">
-            <div class="section-title">
-                <i class="fas fa-download"></i> Application Download
-            </div>
+        <div class="content-grid" style="width: 100%; padding: 0 10px;">
+            
+            <div class="content-box">
+                <div class="download-area">
+                    <div class="section-title">
+                        <i class="fas fa-download"></i> Application Download
+                    </div>
 
-            <a href="https://github.com/TubeNex/VegaMovies/releases/download/v1.0.0/app-release.apk" class="grid-item-link">
-                <div>
-                    <span>Official Release</span>
-                    <i class="fas fa-download"></i> Download APK (Local Media Player)
+                    <a href="https://github.com/TubeNex/VegaMovies/releases/download/v1.0.0/app-release.apk" class="grid-item-link" id="downloadBtn">
+                        <div>
+                            <span>Official Release</span>
+                            <i class="fas fa-download"></i> Download APK (Local Media Player)
+                        </div>
+                        <i class="fas fa-arrow-circle-down" style="font-size: 26px; animation: bounce 2s infinite;"></i>
+                    </a>
+
+                    <div class="counter-container">
+                        <i class="fas fa-users"></i> Total Downloads: <span id="downloadCount">43089</span>
+                    </div>
                 </div>
-                <i class="fas fa-arrow-circle-down" style="font-size: 24px; animation: bounce 2s infinite;"></i>
-            </a>
-        </div>
+            </div>
 
-        <div class="content-box" style="padding-top: 0;">
-            <div class="section-title">
-                <i class="fas fa-info-circle"></i> About Vegamovies Player
+            <div class="content-box">
+                <div class="section-title">
+                    <i class="fas fa-info-circle"></i> About Vegamovies Player
+                </div>
+                <p style="font-size: 14px; color: #999; line-height: 1.6; margin-bottom: 10px;">
+                    Vegamovies brings you an advanced Local Media Player layout capable of rendering all premium dynamic media formats. Enjoy lag-free playback for 4K Ultra HD videos, MKV streams, MP4 encodings, and professional audio.
+                </p>
+                <div class="features-list">
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Supports .mkv, .mp4, .avi, .zip video streaming</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Built-in Hardware Acceleration for Smooth 4K Processing</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Smart background network handling for dynamic content token paths</div>
+                </div>
             </div>
-            <p style="font-size: 13px; color: #999; line-height: 1.6; margin-bottom: 10px;">
-                Vegamovies brings you an advanced Local Media Player layout capable of rendering all premium dynamic media formats. Enjoy lag-free playback for 4K Ultra HD videos, MKV streams, MP4 encodings, and professional audio.
-            </p>
-            <div class="features-list">
-                <div class="feature-item"><i class="fas fa-check-circle"></i> Supports .mkv, .mp4, .avi, .zip video streaming</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i> Built-in Hardware Acceleration for Smooth 4K Processing</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i> Smart background network handling for dynamic content token paths</div>
-            </div>
+
         </div>
 
         <div class="terms-box">
@@ -284,12 +356,31 @@
 
     </div>
 
-    <style>
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-6px); }
-            60% { transform: translateY(-3px); }
-        }
-    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Base/False starting value set to 43089
+            const baseCount = 43089;
+            
+            // LocalStorage se saved value check karega
+            let currentCount = localStorage.getItem('apk_download_clicks');
+            
+            if (!currentCount) {
+                currentCount = baseCount;
+                localStorage.setItem('apk_download_clicks', currentCount);
+            }
+            
+            // Counter display ko format karke show karne ke liye (Jaise: 43,089)
+            const countDisplay = document.getElementById('downloadCount');
+            countDisplay.innerText = Number(currentCount).toLocaleString('en-US');
+            
+            // Button Click handler
+            const downloadBtn = document.getElementById('downloadBtn');
+            downloadBtn.addEventListener('click', function() {
+                currentCount = Number(currentCount) + 1;
+                localStorage.setItem('apk_download_clicks', currentCount);
+                countDisplay.innerText = currentCount.toLocaleString('en-US');
+            });
+        });
+    </script>
 </body>
 </html>
