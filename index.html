@@ -1,9 +1,10 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
- <head><script src="/_sdk/telemetry_sdk.js"></script>
+ <head>
+  <script src="/_sdk/telemetry_sdk.js"></script>
   <meta name="google-site-verification" content="googlebc9f0753ca49b294">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=1280, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Vegamovies v2.0 Light - Premium 4K Streaming Hub &amp; Media Player</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700;800&amp;display=swap">
@@ -50,6 +51,26 @@
             overflow: hidden;
         }
 
+        /* Top Telegram Alert Banner Style */
+        .top-telegram-banner {
+            width: calc(100% - 40px);
+            margin: 20px 20px 5px 20px;
+            background: rgba(0, 136, 204, 0.08);
+            border: 1px solid rgba(0, 136, 204, 0.2);
+            padding: 14px 20px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.05);
+        }
+        .top-tg-info { display: flex; align-items: center; gap: 12px; }
+        .top-tg-info i { font-size: 24px; color: var(--tg-cyan); }
+        .top-tg-text h3 { font-size: 15px; font-weight: 700; color: #0f172a; }
+        .top-tg-text p { font-size: 12px; color: var(--text-sub); }
+        .top-tg-link-btn { background: var(--tg-cyan); color: white !important; text-decoration: none; padding: 8px 18px; border-radius: 50px; font-size: 13px; font-weight: 700; transition: all 0.3s; display: flex; align-items: center; gap: 6px; }
+        .top-tg-link-btn:hover { background: #0077b3; transform: translateY(-1px); }
+
         .ad-space {
             width: 100%; padding: 15px; display: flex; justify-content: center; align-items: center;
             background-color: rgba(255, 255, 255, 0.8);
@@ -67,7 +88,7 @@
 
         /* PAGINATION NAVBAR */
         .pagination-navbar {
-            display: flex; width: calc(100% - 40px); margin: 20px 20px 10px 20px;
+            display: flex; width: calc(100% - 40px); margin: 10px 20px 10px 20px;
             background: rgba(255, 255, 255, 0.9); border: 1px solid var(--panel-border);
             padding: 6px; border-radius: 16px; gap: 5px; flex-wrap: wrap;
             box-shadow: 0 8px 24px rgba(0,0,0,0.06);
@@ -232,12 +253,8 @@
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* Media queries optimized to keep desktop layout scale */
         @media (max-width: 640px) {
-            .floating-download-bar { flex-direction: column; padding: 10px 15px; gap: 10px; }
-            .float-content { width: 100%; }
-            .float-btn-group { width: 100%; justify-content: space-between; }
-            .float-download-btn { flex: 1; justify-content: center; }
-            body { padding-bottom: 160px; }
             .privacy-content { padding: 20px; }
             .privacy-header { padding: 30px 20px; }
             .privacy-header h1 { font-size: 28px; }
@@ -268,6 +285,18 @@
      </div>
     </div>
    </header>
+
+   <div class="top-telegram-banner">
+    <div class="top-tg-info">
+      <i class="fab fa-telegram-plane"></i>
+      <div class="top-tg-text">
+        <h3>Join Official Telegram Channel</h3>
+        <p>Get immediate stable speed updates and dynamic streaming patches.</p>
+      </div>
+    </div>
+    <a href="https://t.me/vegamovies_official" class="top-tg-link-btn" target="_blank">Join Channel</a>
+   </div>
+
    <nav class="pagination-navbar">
     <button class="page-tab-btn active" onclick="switchPage(this, 'home-tab')"><i class="fas fa-home"></i> Home Panel</button> <button class="page-tab-btn" onclick="switchPage(this, 'streaming-tab')"><i class="fas fa-play-circle"></i> Streaming</button> <button class="page-tab-btn" onclick="switchPage(this, 'downloader-tab')"><i class="fas fa-cloud-download-alt"></i> Downloader</button> <button class="page-tab-btn" onclick="switchPage(this, 'browser-tab')"><i class="fas fa-globe"></i> Safe Browser</button> <button class="page-tab-btn" onclick="switchPage(this, 'config-tab')"><i class="fas fa-sliders-h"></i> Settings</button>
    </nav>
@@ -626,8 +655,7 @@
    <footer>
     <p>2020-2026 © Vegamovies Pro System Hub | All rights reserved.</p><a href="javascript:void(0)" onclick="showPrivacyPolicy()" style="margin-top:8px; display:inline-block;">Privacy Policy</a>
    </footer>
-  </div><!-- FLOATING DOWNLOAD BAR -->
-  <div class="floating-download-bar" id="floatingBar">
+  </div><div class="floating-download-bar" id="floatingBar">
    <div class="float-content">
     <i class="fas fa-rocket float-icon"></i>
     <div class="float-text">
@@ -667,6 +695,7 @@
         }
 
         function showPrivacyPolicy() {
+            // ... Privacy Policy Content Remains Unchanged ...
             const privacyHTML = `
                 <div class="privacy-page">
                     <button class="back-btn" onclick="location.reload()"><i class="fas fa-arrow-left"></i> Back to Home</button>
@@ -786,7 +815,7 @@
 
                         <div class="privacy-section">
                             <h2>10. Third-Party Links</h2>
-                            <p>Our application may contain links to third-party websites and services. We are not responsible for their privacy practices. Please review their privacy policies before providing any information.</p>
+                            <p> Our application may contain links to third-party websites and services. We are not responsible for their privacy practices. Please review their privacy policies before providing any information.</p>
                         </div>
 
                         <div class="privacy-section">
@@ -856,5 +885,5 @@
         });
     </script>
   <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9dd5021691b5cbb5',t:'MTc3YjY3NzIxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0ae2ecee1523b28',t:'MTc4MTMyMzE2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-    </html>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0ae2ecee1523b28',t:'MTgridIeMzE2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
