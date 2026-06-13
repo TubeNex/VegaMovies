@@ -1,9 +1,11 @@
- <!doctype html>
+<!doctype html>
 <html lang="en">
  <head>
   <script src="/_sdk/telemetry_sdk.js"></script>
+  <!-- Google Site Verification Updated -->
   <meta name="google-site-verification" content="EbrJ0GRujvpgL8jD4b0Bgsb7Ryf1q6PORRO4RS4lobY">
   <meta charset="UTF-8">
+  <!-- Forced Desktop View Configuration -->
   <meta name="viewport" content="width=1280, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Vegamovies v2.0 Light - Premium 4K Streaming Hub &amp; Media Player</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -286,6 +288,7 @@
     </div>
    </header>
 
+   <!-- Top Telegram Channel Link Banner -->
    <div class="top-telegram-banner">
     <div class="top-tg-info">
       <i class="fab fa-telegram-plane"></i>
@@ -294,7 +297,7 @@
         <p>Get immediate stable speed updates and dynamic streaming patches.</p>
       </div>
     </div>
-    <a href="https://t.me/+2Hmfkm_lYEdiNDll" class="top-tg-link-btn" target="_blank">Join Channel</a>
+    <a href="https://t.me/vegamovies_official" class="top-tg-link-btn" target="_blank">Join Channel</a>
    </div>
 
    <nav class="pagination-navbar">
@@ -649,13 +652,30 @@
     <h4>Popular Searching Terms</h4>
     <p>Vegamovies, Vegamovies official website, Bollywood movies download, Hollywood 4K movies, Vegamovies 2026 releases, Dual Audio movies 720p, Vegamovies dot is, Vegamovies proxy links, local media player apk.</p>
    </div>
+
+   <!-- Added HTML Sitemap Section Portal -->
+   <div class="ad-space" style="margin-top: 20px; margin-bottom: 20px; flex-direction: column; padding: 20px; background-color: rgba(255, 255, 255, 0.9);">
+    <h4 style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 12px; text-transform: uppercase; color: #000;">
+        <i class="fas fa-sitemap" style="color: var(--primary-neon); margin-right: 6px;"></i> Website Index Sitemap
+    </h4>
+    <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; font-size: 12px; font-weight: 700;">
+        <a href="javascript:void(0)" onclick="switchPage(document.querySelectorAll('.page-tab-btn')[0], 'home-tab')" style="color: var(--text-sub); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-neon)'" onmouseout="this.style.color='var(--text-sub)'">Home Panel</a>
+        <a href="javascript:void(0)" onclick="switchPage(document.querySelectorAll('.page-tab-btn')[1], 'streaming-tab')" style="color: var(--text-sub); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-neon)'" onmouseout="this.style.color='var(--text-sub)'">Streaming Pipeline</a>
+        <a href="javascript:void(0)" onclick="switchPage(document.querySelectorAll('.page-tab-btn')[2], 'downloader-tab')" style="color: var(--text-sub); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-neon)'" onmouseout="this.style.color='var(--text-sub)'">Universal Downloader</a>
+        <a href="javascript:void(0)" onclick="switchPage(document.querySelectorAll('.page-tab-btn')[3], 'browser-tab')" style="color: var(--text-sub); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-neon)'" onmouseout="this.style.color='var(--text-sub)'">Safe Browser Core</a>
+        <a href="javascript:void(0)" onclick="switchPage(document.querySelectorAll('.page-tab-btn')[4], 'config-tab')" style="color: var(--text-sub); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-neon)'" onmouseout="this.style.color='var(--text-sub)'">Hardware Settings</a>
+        <a href="javascript:void(0)" onclick="showPrivacyPolicy()" style="color: var(--text-sub); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-neon)'" onmouseout="this.style.color='var(--text-sub)'">Privacy Policy Data</a>
+    </div>
+   </div>
+
    <div class="tg-btn-container" style="width:100%; padding:0 20px; max-width:550px; margin-bottom:20px;">
     <a href="https://t.me/vegamovies_official" class="telegram-btn" target="_blank"> <i class="fab fa-telegram-plane"></i> Join Our Official Telegram Channel </a>
    </div>
    <footer>
     <p>2020-2026 © Vegamovies Pro System Hub | All rights reserved.</p><a href="javascript:void(0)" onclick="showPrivacyPolicy()" style="margin-top:8px; display:inline-block;">Privacy Policy</a>
    </footer>
-  </div><div class="floating-download-bar" id="floatingBar">
+  </div><!-- FLOATING DOWNLOAD BAR -->
+  <div class="floating-download-bar" id="floatingBar">
    <div class="float-content">
     <i class="fas fa-rocket float-icon"></i>
     <div class="float-text">
@@ -680,6 +700,9 @@
 
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
+            
+            // Smooth view scroll adjustment up to the navbar top position
+            document.querySelector('.pagination-navbar').scrollIntoView({ behavior: 'smooth' });
         }
 
         function toggleFaq(element) {
@@ -695,7 +718,6 @@
         }
 
         function showPrivacyPolicy() {
-            // ... Privacy Policy Content Remains Unchanged ...
             const privacyHTML = `
                 <div class="privacy-page">
                     <button class="back-btn" onclick="location.reload()"><i class="fas fa-arrow-left"></i> Back to Home</button>
@@ -815,7 +837,7 @@
 
                         <div class="privacy-section">
                             <h2>10. Third-Party Links</h2>
-                            <p> Our application may contain links to third-party websites and services. We are not responsible for their privacy practices. Please review their privacy policies before providing any information.</p>
+                            <p>Our application may contain links to third-party websites and services. We are not responsible for their privacy practices. Please review their privacy policies before providing any information.</p>
                         </div>
 
                         <div class="privacy-section">
@@ -886,4 +908,4 @@
     </script>
   <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9dd5021691b5cbb5',t:'MTc3YjY3NzIxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0ae2ecee1523b28',t:'MTgridIeMzE2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
+ </html>
