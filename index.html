@@ -1,12 +1,10 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
  <head>
   <script src="/_sdk/telemetry_sdk.js"></script>
-  <!-- Google Site Verification Updated -->
   <meta name="google-site-verification" content="EbrJ0GRujvpgL8jD4b0Bgsb7Ryf1q6PORRO4RS4lobY">
   <meta charset="UTF-8">
-  <!-- Forced Desktop View Configuration -->
-  <meta name="viewport" content="width=1280, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vegamovies v2.0 Light - Premium 4K Streaming Hub &amp; Media Player</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700;800&amp;display=swap">
@@ -39,7 +37,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-bottom: 0;
+            padding-bottom: 120px; /* Space for Mobile Floating Download Bar */
         }
 
         .main-container {
@@ -49,29 +47,30 @@
             border: 1px solid var(--panel-border);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
             display: flex; flex-direction: column; align-items: center;
-            padding-bottom: 30px; margin: 40px 0; border-radius: 28px;
+            padding-bottom: 30px; margin: 20px 0; border-radius: 24px;
             overflow: hidden;
         }
 
-        /* Top Telegram Alert Banner Style */
+        /* Responsive Top Telegram Alert Banner */
         .top-telegram-banner {
-            width: calc(100% - 40px);
-            margin: 20px 20px 5px 20px;
+            width: calc(100% - 30px);
+            margin: 15px 15px 5px 15px;
             background: rgba(0, 136, 204, 0.08);
             border: 1px solid rgba(0, 136, 204, 0.2);
-            padding: 14px 20px;
+            padding: 12px 15px;
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 10px;
             box-shadow: 0 4px 15px rgba(0, 136, 204, 0.05);
         }
         .top-tg-info { display: flex; align-items: center; gap: 12px; }
-        .top-tg-info i { font-size: 24px; color: var(--tg-cyan); }
-        .top-tg-text h3 { font-size: 15px; font-weight: 700; color: #0f172a; }
-        .top-tg-text p { font-size: 12px; color: var(--text-sub); }
-        .top-tg-link-btn { background: var(--tg-cyan); color: white !important; text-decoration: none; padding: 8px 18px; border-radius: 50px; font-size: 13px; font-weight: 700; transition: all 0.3s; display: flex; align-items: center; gap: 6px; }
-        .top-tg-link-btn:hover { background: #0077b3; transform: translateY(-1px); }
+        .top-tg-info i { font-size: 22px; color: var(--tg-cyan); }
+        .top-tg-text h3 { font-size: 14px; font-weight: 700; color: #0f172a; }
+        .top-tg-text p { font-size: 11px; color: var(--text-sub); line-height: 1.3; }
+        .top-tg-link-btn { background: var(--tg-cyan); color: white !important; text-decoration: none; padding: 8px 14px; border-radius: 50px; font-size: 12px; font-weight: 700; transition: all 0.3s; white-space: nowrap; }
+        .top-tg-link-btn:hover { background: #0077b3; }
 
         .ad-space {
             width: 100%; padding: 15px; display: flex; justify-content: center; align-items: center;
@@ -80,187 +79,144 @@
             border-top: 1px solid var(--panel-border); margin: 15px 0; min-height: 80px;
         }
 
-        header { width: 100%; padding: 40px 20px 20px 20px; text-align: center; }
-        header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 6vw, 56px); font-weight: 800; letter-spacing: -1.5px; text-shadow: 0 4px 20px rgba(229, 9, 20, 0.1); }
+        header { width: 100%; padding: 30px 15px 15px 15px; text-align: center; }
+        header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 5vw, 48px); font-weight: 800; letter-spacing: -1px; text-shadow: 0 4px 20px rgba(229, 9, 20, 0.1); }
         header h1 span { color: var(--primary-neon); }
         
-        .meta-container { display: flex; gap: 10px; justify-content: center; margin-top: 15px; flex-wrap: wrap; }
-        .meta-tag { background: rgba(0, 0, 0, 0.03); border: 1px solid var(--panel-border); padding: 6px 14px; border-radius: 50px; font-size: 12px; font-weight: 600; color: #1e293b; }
+        .meta-container { display: flex; gap: 8px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
+        .meta-tag { background: rgba(0, 0, 0, 0.03); border: 1px solid var(--panel-border); padding: 5px 12px; border-radius: 50px; font-size: 11px; font-weight: 600; color: #1e293b; }
         .meta-tag.version { color: var(--success-green); border-color: rgba(34, 197, 94, 0.2); background: rgba(34, 197, 94, 0.02); }
 
         /* PAGINATION NAVBAR */
         .pagination-navbar {
-            display: flex; width: calc(100% - 40px); margin: 10px 20px 10px 20px;
+            display: flex; width: calc(100% - 30px); margin: 10px 15px;
             background: rgba(255, 255, 255, 0.9); border: 1px solid var(--panel-border);
-            padding: 6px; border-radius: 16px; gap: 5px; flex-wrap: wrap;
+            padding: 5px; border-radius: 14px; gap: 4px; overflow-x: auto;
             box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            scrollbar-width: none;
         }
+        .pagination-navbar::-webkit-scrollbar { display: none; }
         
         .page-tab-btn {
-            flex: 1; min-width: 110px; padding: 12px 8px; border: none; background: transparent;
-            color: var(--text-sub); font-weight: 700; font-size: 14px; cursor: pointer;
-            border-radius: 12px; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); 
-            display: flex; align-items: center; justify-content: center; gap: 8px;
+            flex: 1; min-width: 100px; padding: 10px 6px; border: none; background: transparent;
+            color: var(--text-sub); font-weight: 700; font-size: 13px; cursor: pointer;
+            border-radius: 10px; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); 
+            display: flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap;
         }
-        .page-tab-btn:hover { color: #000; background: rgba(0,0,0,0.02); }
         .page-tab-btn.active { background: linear-gradient(135deg, #b30610, var(--primary-neon)); color: white; box-shadow: 0 4px 15px rgba(229, 9, 20, 0.2); }
 
         .tab-content { display: none; width: 100%; animation: fadeIn 0.4s ease-in-out forwards; }
         .tab-content.active { display: block; }
 
         /* PHONE CANVAS GRAPHICS */
-        .mockup-showcase-box { display: flex; flex-direction: column; align-items: center; padding: 20px; width: 100%; }
+        .mockup-showcase-box { display: flex; flex-direction: column; align-items: center; padding: 15px; width: 100%; }
         .phone-frame {
-            width: 100%; max-width: 350px; background: #ffffff; border: 10px solid #1e293b; border-radius: 38px; box-shadow: 0 20px 45px rgba(0,0,0,0.08); overflow: hidden; display: flex; flex-direction: column;
+            width: 100%; max-width: 320px; background: #ffffff; border: 8px solid #1e293b; border-radius: 32px; box-shadow: 0 15px 35px rgba(0,0,0,0.06); overflow: hidden; display: flex; flex-direction: column;
         }
-        .phone-status-bar { background: #ffffff; padding: 8px 20px; display: flex; justify-content: space-between; font-size: 11px; color: #000; font-weight: 700; border-bottom: 1px solid #f1f5f9; }
-        .app-header { background: #fdfdfd; padding: 14px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #edf2f7; }
-        .app-header h2 { color: #000; font-size: 17px; font-weight: 800; display: flex; align-items: center; gap: 6px; }
+        .phone-status-bar { background: #ffffff; padding: 8px 16px; display: flex; justify-content: space-between; font-size: 10px; color: #000; font-weight: 700; border-bottom: 1px solid #f1f5f9; }
+        .app-header { background: #fdfdfd; padding: 12px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #edf2f7; }
+        .app-header h2 { color: #000; font-size: 15px; font-weight: 800; display: flex; align-items: center; gap: 6px; }
         .app-header h2 span { color: var(--primary-neon); }
-        .app-body { background: #fdfdfd; min-height: 380px; padding: 15px; flex-grow: 1; }
-        .phone-nav-bar { background: #ffffff; padding: 10px; display: flex; justify-content: space-around; border-top: 1px solid #edf2f7; font-size: 11px; font-weight: 600; }
-        .p-nav-item { display: flex; flex-direction: column; align-items: center; color: #94a3b8; gap: 3px; }
+        .app-body { background: #fdfdfd; min-height: 340px; padding: 12px; flex-grow: 1; }
+        .phone-nav-bar { background: #ffffff; padding: 8px; display: flex; justify-content: space-around; border-top: 1px solid #edf2f7; font-size: 10px; font-weight: 600; }
+        .p-nav-item { display: flex; flex-direction: column; align-items: center; color: #94a3b8; gap: 2px; }
         .p-nav-item.active { color: var(--primary-neon); }
 
         /* IN-APP RENDERED ELEMENTS */
-        .app-nav-pills { display: flex; gap: 6px; margin-bottom: 15px; overflow-x: auto; }
-        .pill { background: #f1f5f9; padding: 5px 12px; border-radius: 20px; font-size: 11px; color: #475569; font-weight: 600; }
+        .app-nav-pills { display: flex; gap: 6px; margin-bottom: 12px; overflow-x: auto; scrollbar-width: none; }
+        .app-nav-pills::-webkit-scrollbar { display: none; }
+        .pill { background: #f1f5f9; padding: 4px 10px; border-radius: 20px; font-size: 10px; color: #475569; font-weight: 600; white-space: nowrap; }
         .pill.active { background: rgba(229, 9, 20, 0.05); color: var(--primary-neon); border: 1px solid var(--primary-neon); }
-        .app-empty-state { text-align: center; color: var(--text-sub); padding: 40px 0; }
-        .app-empty-state i { font-size: 42px; color: #cbd5e1; margin-bottom: 12px; }
-        .app-refresh-btn { background: var(--primary-neon); border: none; padding: 8px 18px; color: white; border-radius: 6px; font-weight: 700; margin-top: 12px; }
+        .app-empty-state { text-align: center; color: var(--text-sub); padding: 30px 0; }
+        .app-empty-state i { font-size: 36px; color: #cbd5e1; margin-bottom: 10px; }
         
-        .stream-box-btn { background: linear-gradient(135deg, var(--primary-neon), #ff4b51); width: 100%; padding: 14px; border-radius: 10px; text-align: center; font-weight: 700; color: white; margin-bottom: 15px; }
-        .server-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-        .server-item { background: #fff; border: 1px solid #edf2f7; padding: 10px; border-radius: 8px; font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 6px; color: #1e293b; }
+        .stream-box-btn { background: linear-gradient(135deg, var(--primary-neon), #ff4b51); width: 100%; padding: 12px; border-radius: 8px; text-align: center; font-weight: 700; color: white; margin-bottom: 12px; font-size: 13px; }
+        .server-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+        .server-item { background: #fff; border: 1px solid #edf2f7; padding: 8px; border-radius: 6px; font-size: 10px; font-weight: 600; display: flex; align-items: center; gap: 4px; color: #1e293b; }
         .server-item i { color: var(--primary-neon); }
         
-        .input-mock { background: #f8fafc; border: 1px solid #e2e8f0; padding: 10px; border-radius: 8px; width: 100%; font-size: 11px; color: #64748b; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
-        .browser-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; margin-top: 15px; }
-        .browser-icon-box { font-size: 10px; color: var(--text-sub); font-weight: 600; }
-        .browser-icon-box i { width: 40px; height: 40px; background: #f1f5f9; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; color: #1e293b; border: 1px solid #edf2f7; margin: 0 auto 4px auto; }
+        .input-mock { background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px; border-radius: 6px; width: 100%; font-size: 10px; color: #64748b; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+        .browser-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; text-align: center; margin-top: 12px; }
+        .browser-icon-box { font-size: 9px; color: var(--text-sub); font-weight: 600; }
+        .browser-icon-box i { width: 34px; height: 34px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #1e293b; border: 1px solid #edf2f7; margin: 0 auto 4px auto; }
         
-        .settings-list { display: flex; flex-direction: column; gap: 8px; }
-        .settings-row { background: #fff; border: 1px solid #edf2f7; padding: 12px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 600; color: #1e293b; }
+        .settings-list { display: flex; flex-direction: column; gap: 6px; }
+        .settings-row { background: #fff; border: 1px solid #edf2f7; padding: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; font-weight: 600; color: #1e293b; }
 
         /* GRID PORTAL SYSTEMS */
-        .content-grid { width: 100%; padding: 10px 20px; display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .content-grid { width: 100%; padding: 0 15px; display: grid; grid-template-columns: 1fr; gap: 15px; }
         @media (min-width: 768px) { .content-grid { grid-template-columns: 1fr 1fr; } }
-        .content-box { width: 100%; padding: 25px; background: rgba(0, 0, 0, 0.01); border-radius: 24px; border: 1px solid var(--panel-border); display: flex; flex-direction: column; justify-content: center; transition: all 0.3s; }
-        .content-box:hover { border-color: rgba(229, 9, 20, 0.2); background: rgba(229, 9, 20, 0.02); }
+        .content-box { width: 100%; padding: 20px; background: rgba(0, 0, 0, 0.01); border-radius: 20px; border: 1px solid var(--panel-border); display: flex; flex-direction: column; justify-content: center; }
         
-        .section-title { font-family: 'Space Grotesk', sans-serif; font-size: 22px; color: #000; margin-bottom: 15px; display: flex; align-items: center; font-weight: 700; border-bottom: 1px solid var(--panel-border); padding-bottom: 10px; }
-        .section-title i { margin-right: 10px; color: var(--primary-neon); }
+        .section-title { font-family: 'Space Grotesk', sans-serif; font-size: 18px; color: #000; margin-bottom: 12px; display: flex; align-items: center; font-weight: 700; border-bottom: 1px solid var(--panel-border); padding-bottom: 8px; }
+        .section-title i { margin-right: 8px; color: var(--primary-neon); }
 
-        .grid-item-link { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 20px 25px; border-radius: 18px; color: white; text-decoration: none; font-weight: 800; font-size: 18px; background: linear-gradient(135deg, #b30610 0%, var(--primary-neon) 100%); box-shadow: 0 10px 25px rgba(229, 9, 20, 0.15); transition: all 0.3s; }
-        .grid-item-link:hover { transform: translateY(-4px); box-shadow: 0 16px 35px rgba(229, 9, 20, 0.25); }
-        .grid-item-link span { font-size: 11px; background: rgba(0, 0, 0, 0.2); padding: 4px 10px; border-radius: 6px; display: block; margin-bottom: 6px; width: fit-content; text-transform: uppercase; }
-        .counter-container { margin-top: 15px; font-size: 14px; font-weight: 700; color: var(--success-green); background-color: rgba(34, 197, 94, 0.05); padding: 8px 20px; border-radius: 30px; display: inline-flex; gap: 10px; border: 1px solid rgba(34,197,94,0.1); }
+        .grid-item-link { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 16px 20px; border-radius: 14px; color: white; text-decoration: none; font-weight: 800; font-size: 15px; background: linear-gradient(135deg, #b30610 0%, var(--primary-neon) 100%); box-shadow: 0 8px 20px rgba(229, 9, 20, 0.12); }
+        .grid-item-link span { font-size: 10px; background: rgba(0, 0, 0, 0.2); padding: 3px 8px; border-radius: 50px; display: block; margin-bottom: 4px; width: fit-content; text-transform: uppercase; }
+        .counter-container { margin-top: 12px; font-size: 13px; font-weight: 700; color: var(--success-green); background-color: rgba(34, 197, 94, 0.05); padding: 6px 16px; border-radius: 30px; display: inline-flex; gap: 8px; border: 1px solid rgba(34,197,94,0.1); }
 
-        .telegram-btn { display: flex; align-items: center; justify-content: center; width: 100%; background: linear-gradient(135deg, var(--tg-cyan), #00d2ff); color: white; text-decoration: none; padding: 16px; border-radius: 50px; font-weight: 700; box-shadow: 0 8px 25px rgba(0, 136, 204, 0.1); transition: all 0.3s; }
-        .telegram-btn:hover { transform: translateY(-3px); }
+        .telegram-btn { display: flex; align-items: center; justify-content: center; width: 100%; background: linear-gradient(135deg, var(--tg-cyan), #00d2ff); color: white; text-decoration: none; padding: 14px; border-radius: 50px; font-weight: 700; font-size: 14px; box-shadow: 0 6px 20px rgba(0, 136, 204, 0.1); }
 
-        /* FLOATING DOWNLOAD BAR */
+        /* MOBILE OPTIMIZED FLOATING DOWNLOAD BAR */
         .floating-download-bar {
-            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 9999;
+            position: fixed; bottom: 15px; left: 50%; transform: translateX(-50%); z-index: 9999;
             background: linear-gradient(135deg, #e50914 0%, #ff4b51 100%);
             backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            padding: 16px 28px; display: flex; align-items: center; justify-content: space-between;
-            gap: 20px; animation: slideUp 0.5s ease-out forwards;
-            box-shadow: 0 20px 60px rgba(229, 9, 20, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-            border-radius: 20px; max-width: 90%; width: fit-content;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 12px 16px; display: flex; flex-direction: column; align-items: center;
+            gap: 10px; animation: slideUp 0.5s ease-out forwards;
+            box-shadow: 0 15px 40px rgba(229, 9, 20, 0.35);
+            border-radius: 18px; width: calc(100% - 30px); max-width: 450px;
         }
 
-        @keyframes slideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(100%) translateX(-50%); opacity: 0; } to { transform: translateY(0) translateX(-50%); opacity: 1; } }
 
-        .float-content { display: flex; align-items: center; gap: 12px; flex: 1; }
-        .float-icon { font-size: 24px; color: var(--primary-neon); animation: pulse 2s infinite; }
+        .float-content { display: flex; align-items: center; gap: 10px; width: 100%; }
+        .float-icon { font-size: 20px; color: #fff; animation: pulse 2s infinite; }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
         
-        .float-text { display: flex; flex-direction: column; gap: 2px; }
-        .float-title { color: white; font-weight: 800; font-size: 14px; letter-spacing: 0.5px; }
-        .float-subtitle { color: #94a3b8; font-size: 12px; }
-        .float-counter { color: var(--success-green); font-weight: 700; font-size: 13px; }
+        .float-text { display: flex; flex-direction: column; gap: 1px; }
+        .float-title { color: white; font-weight: 800; font-size: 13px; }
+        .float-subtitle { color: rgba(255, 255, 255, 0.8); font-size: 11px; }
 
-        .float-btn-group { display: flex; gap: 8px; align-items: center; }
+        .float-btn-group { display: flex; gap: 6px; align-items: center; width: 100%; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 8px; }
+        .float-counter { color: #fff; font-weight: 700; font-size: 11px; background: rgba(0,0,0,0.15); padding: 4px 10px; border-radius: 50px; }
         .float-btn {
-            padding: 10px 18px; border: none; border-radius: 10px; font-weight: 700; font-size: 13px;
-            cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 6px;
-            text-transform: uppercase; letter-spacing: 0.5px;
+            padding: 8px 14px; border: none; border-radius: 8px; font-weight: 700; font-size: 11px;
+            cursor: pointer; display: flex; align-items: center; gap: 4px; text-transform: uppercase;
         }
-
-        .float-download-btn {
-            background: linear-gradient(135deg, var(--primary-neon), #ff4b51);
-            color: white; box-shadow: 0 8px 20px rgba(229, 9, 20, 0.3);
-        }
-        .float-download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(229, 9, 20, 0.4); }
-
-        .float-close-btn {
-            background: rgba(255, 255, 255, 0.1); color: #94a3b8; width: 36px; height: 36px;
-            display: flex; align-items: center; justify-content: center; border-radius: 8px; cursor: pointer;
-        }
-        .float-close-btn:hover { background: rgba(255, 255, 255, 0.15); color: white; }
+        .float-download-btn { background: #fff; color: var(--primary-neon); flex-grow: 1; justify-content: center; }
+        .float-close-btn { background: rgba(255, 255, 255, 0.15); color: #fff; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 6px; }
 
         /* ACCORDION FAQ */
-        .faq-section { width: calc(100% - 40px); margin: 20px; padding: 25px; background: rgba(0, 0, 0, 0.01); border-radius: 24px; border: 1px solid var(--panel-border); }
-        .accordion-item { border-bottom: 1px solid rgba(0,0,0,0.04); padding: 16px 0; transition: all 0.3s; }
+        .faq-section { width: calc(100% - 30px); margin: 15px; padding: 15px; background: rgba(0, 0, 0, 0.01); border-radius: 20px; border: 1px solid var(--panel-border); }
+        .accordion-item { border-bottom: 1px solid rgba(0,0,0,0.04); padding: 12px 0; }
         .accordion-item:last-child { border: none; }
-        .accordion-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 700; font-size: 15px; color: #0f172a; padding: 4px 0; }
-        .accordion-header:hover { color: var(--primary-neon); }
-        .accordion-icon { color: var(--primary-neon); transition: transform 0.3s; }
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: var(--text-sub); font-size: 13.5px; line-height: 1.6; }
-        .accordion-item.active .accordion-content { max-height: 300px; margin-top: 12px; }
+        .accordion-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 700; font-size: 13.5px; color: #0f172a; }
+        .accordion-icon { color: var(--primary-neon); transition: transform 0.3s; font-size: 12px; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: var(--text-sub); font-size: 12.5px; line-height: 1.5; }
+        .accordion-item.active .accordion-content { max-height: 350px; margin-top: 8px; }
         .accordion-item.active .accordion-icon { transform: rotate(180deg); }
 
-        .terms-box { text-align: center; padding: 35px 20px; background-color: rgba(255, 255, 255, 0.8); border-top: 1px solid var(--panel-border); width: 100%; }
-        .terms-box h4 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: #000; opacity: 0.5; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
-        .terms-box p { font-size: 13px; color: #64748b; line-height: 1.6; max-width: 850px; margin: 0 auto; }
+        .terms-box { text-align: center; padding: 25px 15px; background-color: rgba(255, 255, 255, 0.8); border-top: 1px solid var(--panel-border); width: 100%; }
+        .terms-box h4 { font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: #000; opacity: 0.5; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .terms-box p { font-size: 11.5px; color: #64748b; line-height: 1.5; }
         
-        footer { width: 100%; text-align: center; padding: 30px 20px; font-size: 13px; color: #64748b; background-color: rgba(255, 255, 255, 0.95); border-top: 1px solid var(--panel-border); }
-        footer a { color: var(--primary-neon); text-decoration: none; transition: all 0.3s; margin: 0 8px; }
-        footer a:hover { text-decoration: underline; }
+        footer { width: 100%; text-align: center; padding: 20px 15px; font-size: 12px; color: #64748b; background-color: rgba(255, 255, 255, 0.95); border-top: 1px solid var(--panel-border); }
+        footer a { color: var(--primary-neon); text-decoration: none; margin: 0 6px; }
 
-        /* PRIVACY POLICY PAGE */
-        .privacy-page {
-            width: 95%; max-width: 900px;
-            background: var(--panel-bg);
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--panel-border);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-            border-radius: 28px; overflow: hidden;
-            margin: 40px 0; padding-bottom: 30px;
-        }
+        /* PRIVACY POLICY PAGE MOBILE CONFIG */
+        .privacy-page { width: 95%; background: var(--panel-bg); border: 1px solid var(--panel-border); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); border-radius: 20px; overflow: hidden; margin: 20px 0; }
+        .privacy-header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 30px 15px; text-align: center; }
+        .privacy-header h1 { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+        .privacy-header p { font-size: 12px; color: #cbd5e1; }
+        .privacy-content { padding: 20px; }
+        .privacy-section { margin-bottom: 20px; }
+        .privacy-section h2 { color: var(--primary-neon); font-size: 16px; margin-bottom: 8px; }
+        .privacy-section p, .privacy-section ul { color: var(--text-sub); line-height: 1.6; font-size: 12.5px; }
+        .back-btn { display: inline-flex; align-items: center; gap: 6px; color: var(--primary-neon); text-decoration: none; font-weight: 700; margin: 15px; font-size: 13px; }
 
-        .privacy-header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white; padding: 50px 30px; text-align: center;
-        }
-        .privacy-header h1 { font-size: 36px; font-weight: 800; margin-bottom: 10px; }
-        .privacy-header p { font-size: 14px; color: #cbd5e1; }
-
-        .privacy-content { padding: 40px; }
-        .privacy-section { margin-bottom: 30px; }
-        .privacy-section h2 { color: var(--primary-neon); font-size: 20px; margin-bottom: 12px; font-weight: 700; }
-        .privacy-section p { color: var(--text-sub); line-height: 1.8; margin-bottom: 10px; font-size: 14px; }
-        .privacy-section ul { margin-left: 20px; color: var(--text-sub); line-height: 1.8; font-size: 14px; }
-        .privacy-section li { margin-bottom: 8px; }
-
-        .back-btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            color: var(--primary-neon); text-decoration: none; font-weight: 700;
-            margin: 20px; transition: all 0.3s;
-        }
-        .back-btn:hover { gap: 12px; }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Media queries optimized to keep desktop layout scale */
-        @media (max-width: 640px) {
-            .privacy-content { padding: 20px; }
-            .privacy-header { padding: 30px 20px; }
-            .privacy-header h1 { font-size: 28px; }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
     </style>
   <script async src="https://js.onclckmn.com/static/onclicka.js" data-admpid="440407"></script>
   <script src="https://valuedcowboysample.com/40/01/1f/40011f4aead6dd58eb143db0e7191d31.js"></script>
@@ -288,20 +244,19 @@
     </div>
    </header>
 
-   <!-- Top Telegram Channel Link Banner Updated With New Link -->
    <div class="top-telegram-banner">
     <div class="top-tg-info">
       <i class="fab fa-telegram-plane"></i>
       <div class="top-tg-text">
-        <h3>Join Official Telegram Channel</h3>
-        <p>Get immediate stable speed updates and dynamic streaming patches.</p>
+        <h3>Join Telegram Channel</h3>
+        <p>Immediate runtime speed patches.</p>
       </div>
     </div>
-    <a href="https://t.me/+2Hmfkm_lYEdiNDll" class="top-tg-link-btn" target="_blank">Join Channel</a>
+    <a href="https://t.me/+2Hmfkm_lYEdiNDll" class="top-tg-link-btn" target="_blank">Join</a>
    </div>
 
    <nav class="pagination-navbar">
-    <button class="page-tab-btn active" onclick="switchPage(this, 'home-tab')"><i class="fas fa-home"></i> Home Panel</button> <button class="page-tab-btn" onclick="switchPage(this, 'streaming-tab')"><i class="fas fa-play-circle"></i> Streaming</button> <button class="page-tab-btn" onclick="switchPage(this, 'downloader-tab')"><i class="fas fa-cloud-download-alt"></i> Downloader</button> <button class="page-tab-btn" onclick="switchPage(this, 'browser-tab')"><i class="fas fa-globe"></i> Safe Browser</button> <button class="page-tab-btn" onclick="switchPage(this, 'config-tab')"><i class="fas fa-sliders-h"></i> Settings</button>
+    <button class="page-tab-btn active" onclick="switchPage(this, 'home-tab')"><i class="fas fa-home"></i> Home</button> <button class="page-tab-btn" onclick="switchPage(this, 'streaming-tab')"><i class="fas fa-play-circle"></i> Stream</button> <button class="page-tab-btn" onclick="switchPage(this, 'downloader-tab')"><i class="fas fa-cloud-download-alt"></i> Downloader</button> <button class="page-tab-btn" onclick="switchPage(this, 'browser-tab')"><i class="fas fa-globe"></i> Browser</button> <button class="page-tab-btn" onclick="switchPage(this, 'config-tab')"><i class="fas fa-sliders-h"></i> Settings</button>
    </nav>
    <div class="ad-space">
     <script async data-cfasync="false" src="https://valuedcowboysample.com/09086a3f344c78a5b4301368b2254a4e/invoke.js"></script>
@@ -318,39 +273,28 @@
        </div>
        <div class="app-body">
         <div class="app-nav-pills">
-         <div class="pill">
-          Videos
-         </div>
-         <div class="pill active">
-          Audio Core
-         </div>
-         <div class="pill">
-          Folders
-         </div>
-         <div class="pill">
-          Playlists
-         </div>
+         <div class="pill">Videos</div>
+         <div class="pill active">Audio Core</div>
+         <div class="pill">Folders</div>
+         <div class="pill">Playlists</div>
         </div>
         <div class="app-empty-state"><i class="fas fa-music"></i>
-         <p style="font-size:13px; margin-top:5px;">No local audio files found on your device storage nodes.</p>
+         <p style="font-size:12px; margin-top:5px;">No local audio files found on your device storage nodes.</p>
         </div>
        </div>
        <div class="phone-nav-bar">
-        <div class="p-nav-item active"><i class="fas fa-folder"></i>Library
-        </div>
-        <div class="p-nav-item"><i class="fas fa-play"></i>Streaming
-        </div>
-        <div class="p-nav-item"><i class="fas fa-download"></i>Downloads
-        </div>
+        <div class="p-nav-item active"><i class="fas fa-folder"></i>Library</div>
+        <div class="p-nav-item"><i class="fas fa-play"></i>Streaming</div>
+        <div class="p-nav-item"><i class="fas fa-download"></i>Downloads</div>
        </div>
       </div>
      </div>
      <div class="content-box">
       <div class="section-title"><i class="fas fa-file-video"></i> Multimedia Core Player
       </div>
-      <p style="color:var(--text-sub); font-size:14.5px; line-height:1.7; margin-bottom:20px;">Vegamovies v2.0 direct local sandboxing feature use karta hai. Isme advanced multimedia pipeline nodes direct implement kiye gaye hain taaki local assets stream smoothly render hon.</p><a href="https://pool-apks-aptoide-connect.aptoide.com/apk/com-vegamovies-app-2_69260c0efc9dfad7922773131b7cc93b.apk" class="grid-item-link" id="downloadBtn">
-       <div><span>Stable Build v2.0</span><i class="fas fa-download"></i> Download APK Now
-       </div><i class="fas fa-arrow-circle-down" style="font-size: 24px; animation: bounce 2s infinite;"></i> </a>
+      <p style="color:var(--text-sub); font-size:13px; line-height:1.6; margin-bottom:15px;">Vegamovies v2.0 direct local sandboxing feature use karta hai. Isme advanced multimedia pipeline nodes direct implement kiye gaye hain taaki local assets stream smoothly render hon.</p><a href="https://pool-apks-aptoide-connect.aptoide.com/apk/com-vegamovies-app-2_69260c0efc9dfad7922773131b7cc93b.apk" class="grid-item-link" id="downloadBtn">
+       <div><span>Stable Build v2.0</span><i class="fas fa-download"></i> Download APK
+       </div><i class="fas fa-arrow-circle-down" style="font-size: 20px; animation: bounce 2s infinite;"></i> </a>
       <div>
        <div class="counter-container"><i class="fas fa-users"></i> Downloads: <span id="downloadCount">43,089</span>
        </div>
@@ -371,14 +315,10 @@
         <div class="stream-box-btn"><i class="fas fa-play"></i> Open Live Watcho
         </div>
         <div class="server-grid">
-         <div class="server-item"><i class="fas fa-play-circle"></i> NetMirror
-         </div>
-         <div class="server-item"><i class="fas fa-play-circle"></i> VegaPena
-         </div>
-         <div class="server-item"><i class="fas fa-play-circle"></i> Watcho
-         </div>
-         <div class="server-item"><i class="fas fa-play-circle"></i> ArmFlix
-         </div>
+         <div class="server-item"><i class="fas fa-play-circle"></i> NetMirror</div>
+         <div class="server-item"><i class="fas fa-play-circle"></i> VegaPena</div>
+         <div class="server-item"><i class="fas fa-play-circle"></i> Watcho</div>
+         <div class="server-item"><i class="fas fa-play-circle"></i> ArmFlix</div>
         </div>
        </div>
       </div>
@@ -386,7 +326,7 @@
      <div class="content-box">
       <div class="section-title"><i class="fas fa-server"></i> Cloud Stream Pipeline
       </div>
-      <p style="color:var(--text-sub); font-size:14.5px; line-height:1.7;">Dynamic streaming block me pre-configured servers lagaye gaye hain jo dynamic paths automatically load balance karte hain taaki lightning fast connectivity buffer rates supply hon.</p>
+      <p style="color:var(--text-sub); font-size:13px; line-height:1.6;">Dynamic streaming block me pre-configured servers lagaye gaye hain jo dynamic paths automatically load balance karte hain taaki lightning fast connectivity buffer rates supply hon.</p>
      </div>
     </div>
    </div>
@@ -403,16 +343,12 @@
         <div class="input-mock">
          Paste video link here...
         </div>
-        <p style="font-size:11px; text-transform:uppercase; color:#94a3b8; margin-bottom:10px; font-weight:700;">Direct Download Portals</p>
+        <p style="font-size:10px; text-transform:uppercase; color:#94a3b8; margin-bottom:8px; font-weight:700;">Direct Download Portals</p>
         <div class="server-grid">
-         <div class="server-item"><i class="fas fa-arrow-alt-circle-down"></i> Vegamovies
-         </div>
-         <div class="server-item"><i class="fas fa-arrow-alt-circle-down"></i> UHDMovies
-         </div>
-         <div class="server-item"><i class="fas fa-arrow-alt-circle-down"></i> KatWorld
-         </div>
-         <div class="server-item"><i class="fas fa-arrow-alt-circle-down"></i> MoviesMod
-         </div>
+         <div class="server-item"><i class="fas fa-arrow-alt-circle-down"></i> Vegamovies</div>
+         <div class="server-item"><i class="fas fa-arrow-alt-circle-down"></i> UHDMovies</div>
+         <div class="server-item"><i class="fas fa-arrow-alt-circle-down"></i> KatWorld</div>
+         <div class="server-item"><i class="fas fa-arrow-alt-circle-down"></i> MoviesMod</div>
         </div>
        </div>
       </div>
@@ -420,7 +356,7 @@
      <div class="content-box">
       <div class="section-title"><i class="fas fa-link"></i> Advanced Universal Downloader
       </div>
-      <p style="color:var(--text-sub); font-size:14.5px; line-height:1.7;">Is built-in downloader framework panel me social media links or hardware accelerated video data links directly lock execution parameters bypass karke fast downloads ensure karte hain.</p>
+      <p style="color:var(--text-sub); font-size:13px; line-height:1.6;">Is built-in downloader framework panel me social media links or hardware accelerated video data links directly lock execution parameters bypass karke fast downloads ensure karte hain.</p>
      </div>
     </div>
    </div>
@@ -437,14 +373,10 @@
         <div class="input-mock"><i class="fas fa-search"></i> Search or enter web address...
         </div>
         <div class="browser-grid">
-         <div class="browser-icon-box"><i class="fab fa-google"></i>Google
-         </div>
-         <div class="browser-icon-box"><i class="fab fa-youtube" style="color:red"></i>YouTube
-         </div>
-         <div class="browser-icon-box"><i class="fab fa-facebook" style="color:#1877f2"></i>Facebook
-         </div>
-         <div class="browser-icon-box"><i class="fab fa-twitter"></i>Twitter
-         </div>
+         <div class="browser-icon-box"><i class="fab fa-google"></i>Google</div>
+         <div class="browser-icon-box"><i class="fab fa-youtube" style="color:red"></i>YouTube</div>
+         <div class="browser-icon-box"><i class="fab fa-facebook" style="color:#1877f2"></i>Facebook</div>
+         <div class="browser-icon-box"><i class="fab fa-twitter"></i>Twitter</div>
         </div>
        </div>
       </div>
@@ -452,7 +384,7 @@
      <div class="content-box">
       <div class="section-title"><i class="fas fa-shield-alt"></i> Sandbox Safe Browser Core
       </div>
-      <p style="color:var(--text-sub); font-size:14.5px; line-height:1.7;">Identity protection systems directly cookies metadata completely flush out kar dete hain, jisse proxy evaluation logs background system me auto protect mode par operational rehte hain.</p>
+      <p style="color:var(--text-sub); font-size:13px; line-height:1.6;">Identity protection systems directly cookies metadata completely flush out kar dete hain, jisse proxy evaluation logs background system me auto protect mode par operational rehte hain.</p>
      </div>
     </div>
    </div>
@@ -480,7 +412,7 @@
      <div class="content-box">
       <div class="section-title"><i class="fas fa-cogs"></i> Direct Internal Hardware Allocations
       </div>
-      <p style="color:var(--text-sub); font-size:14.5px; line-height:1.7;">Custom decoders adjustments system logs control panel me clear access configurations module block supply karte hain, jisse latency configurations direct adjust ho sakti hain.</p>
+      <p style="color:var(--text-sub); font-size:13px; line-height:1.6;">Custom decoders adjustments system logs control panel me clear access configurations module block supply karte hain, jisse latency configurations direct adjust ho sakti hain.</p>
      </div>
     </div>
    </div>
@@ -653,47 +585,43 @@
     <p>Vegamovies, Vegamovies official website, Bollywood movies download, Hollywood 4K movies, Vegamovies 2026 releases, Dual Audio movies 720p, Vegamovies dot is, Vegamovies proxy links, local media player apk.</p>
    </div>
 
-   <!-- HTML Sitemap Section Portal -->
    <div class="ad-space" style="margin-top: 20px; margin-bottom: 20px; flex-direction: column; padding: 20px; background-color: rgba(255, 255, 255, 0.9);">
-    <h4 style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 12px; text-transform: uppercase; color: #000;">
+    <h4 style="font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 12px; text-transform: uppercase; color: #000;">
         <i class="fas fa-sitemap" style="color: var(--primary-neon); margin-right: 6px;"></i> Website Index Sitemap
     </h4>
-    <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; font-size: 12px; font-weight: 700;">
-        <a href="javascript:void(0)" onclick="switchPage(document.querySelectorAll('.page-tab-btn')[0], 'home-tab')" style="color: var(--text-sub); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-neon)'" onmouseout="this.style.color='var(--text-sub)'">Home Panel</a>
-        <a href="javascript:void(0)" onclick="switchPage(document.querySelectorAll('.page-tab-btn')[1], 'streaming-tab')" style="color: var(--text-sub); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-neon)'" onmouseout="this.style.color='var(--text-sub)'">Streaming Pipeline</a>
-        <a href="javascript:void(0)" onclick="switchPage(document.querySelectorAll('.page-tab-btn')[2], 'downloader-tab')" style="color: var(--text-sub); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-neon)'" onmouseout="this.style.color='var(--text-sub)'">Universal Downloader</a>
-        <a href="javascript:void(0)" onclick="switchPage(document.querySelectorAll('.page-tab-btn')[3], 'browser-tab')" style="color: var(--text-sub); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-neon)'" onmouseout="this.style.color='var(--text-sub)'">Safe Browser Core</a>
-        <a href="javascript:void(0)" onclick="switchPage(document.querySelectorAll('.page-tab-btn')[4], 'config-tab')" style="color: var(--text-sub); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-neon)'" onmouseout="this.style.color='var(--text-sub)'">Hardware Settings</a>
-        <a href="javascript:void(0)" onclick="showPrivacyPolicy()" style="color: var(--text-sub); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-neon)'" onmouseout="this.style.color='var(--text-sub)'">Privacy Policy Data</a>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; font-size: 11px; font-weight: 700;">
+        <a href="javascript:void(0)" onclick="switchPage(document.querySelectorAll('.page-tab-btn')[0], 'home-tab')" style="color: var(--text-sub); text-decoration: none;">Home Panel</a>
+        <a href="javascript:void(0)" onclick="switchPage(document.querySelectorAll('.page-tab-btn')[1], 'streaming-tab')" style="color: var(--text-sub); text-decoration: none;">Streaming Pipeline</a>
+        <a href="javascript:void(0)" onclick="switchPage(document.querySelectorAll('.page-tab-btn')[2], 'downloader-tab')" style="color: var(--text-sub); text-decoration: none;">Universal Downloader</a>
+        <a href="javascript:void(0)" onclick="switchPage(document.querySelectorAll('.page-tab-btn')[3], 'browser-tab')" style="color: var(--text-sub); text-decoration: none;">Safe Browser Core</a>
+        <a href="javascript:void(0)" onclick="switchPage(document.querySelectorAll('.page-tab-btn')[4], 'config-tab')" style="color: var(--text-sub); text-decoration: none;">Hardware Settings</a>
+        <a href="javascript:void(0)" onclick="showPrivacyPolicy()" style="color: var(--text-sub); text-decoration: none;">Privacy Policy Data</a>
     </div>
    </div>
 
-   <!-- Main Telegram CTA Button Updated With New Link -->
-   <div class="tg-btn-container" style="width:100%; padding:0 20px; max-width:550px; margin-bottom:20px;">
+   <div class="tg-btn-container" style="width:100%; padding:0 15px; max-width:550px; margin-bottom:20px;">
     <a href="https://t.me/+2Hmfkm_lYEdiNDll" class="telegram-btn" target="_blank"> <i class="fab fa-telegram-plane"></i> Join Our Official Telegram Channel </a>
    </div>
    <footer>
     <p>2020-2026 © Vegamovies Pro System Hub | All rights reserved.</p><a href="javascript:void(0)" onclick="showPrivacyPolicy()" style="margin-top:8px; display:inline-block;">Privacy Policy</a>
    </footer>
-  </div><!-- FLOATING DOWNLOAD BAR -->
+  </div>
+
   <div class="floating-download-bar" id="floatingBar">
    <div class="float-content">
     <i class="fas fa-rocket float-icon"></i>
     <div class="float-text">
-     <div class="float-title">
-      ⚡ Download Vegamovies v2.0 Now!
-     </div>
-     <div class="float-subtitle">
-      4K Ultra HD Streaming + Fast Downloads
-     </div>
+     <div class="float-title">⚡ Download Vegamovies v2.0 Now!</div>
+     <div class="float-subtitle">4K Ultra HD Streaming & Fast Downloads</div>
     </div>
    </div>
    <div class="float-btn-group">
-    <div class="float-counter" id="floatCounter">
-     43,089 Downloads
-    </div><a href="https://pool-apks-aptoide-connect.aptoide.com/apk/com-vegamovies-app-2_69260c0efc9dfad7922773131b7cc93b.apk" class="float-btn float-download-btn"> <i class="fas fa-download"></i> GET APK </a> <button class="float-btn float-close-btn" onclick="closeFloatingBar()"><i class="fas fa-times"></i></button>
+    <div class="float-counter" id="floatCounter">43,089 Downloads</div>
+    <a href="https://pool-apks-aptoide-connect.aptoide.com/apk/com-vegamovies-app-2_69260c0efc9dfad7922773131b7cc93b.apk" class="float-btn float-download-btn"> <i class="fas fa-download"></i> GET APK </a> 
+    <button class="float-btn float-close-btn" onclick="closeFloatingBar()"><i class="fas fa-times"></i></button>
    </div>
   </div>
+
   <script>
         function switchPage(button, tabId) {
             document.querySelectorAll('.page-tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -731,9 +659,7 @@
                         <div class="privacy-section">
                             <h2>1. Introduction</h2>
                             <p>Vegamovies Pro ("we," "us," "our," or "Company") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our application and website.</p>
-                            <p>Please read this Privacy Policy carefully. If you do not agree with our policies and practices, please do not use our services.</p>
                         </div>
-
                         <div class="privacy-section">
                             <h2>2. Information We Collect</h2>
                             <p><strong>A. Information You Provide Directly:</strong></p>
@@ -742,109 +668,8 @@
                                 <li>Profile information and preferences</li>
                                 <li>Viewing history and watch lists</li>
                                 <li>Device information and technical data</li>
-                                <li>Communication content (messages, feedback, support requests)</li>
-                                <li>Payment information (processed securely through third-party providers)</li>
-                            </ul>
-                            <p><strong>B. Information Collected Automatically:</strong></p>
-                            <ul>
-                                <li>IP address and device identifiers</li>
-                                <li>Browser type and version</li>
-                                <li>Operating system and device type</li>
-                                <li>Pages visited and time spent on application</li>
-                                <li>Cookies and similar tracking technologies</li>
-                                <li>Location data (with your permission)</li>
-                                <li>Usage patterns and analytics</li>
                             </ul>
                         </div>
-
-                        <div class="privacy-section">
-                            <h2>3. How We Use Your Information</h2>
-                            <p>We use collected information for the following purposes:</p>
-                            <ul>
-                                <li>Providing, maintaining, and improving our services</li>
-                                <li>Personalizing your experience and content recommendations</li>
-                                <li>Processing transactions and payments</li>
-                                <li>Sending promotional emails and notifications (with consent)</li>
-                                <li>Responding to your inquiries and customer support</li>
-                                <li>Analyzing usage patterns to improve functionality</li>
-                                <li>Ensuring security and preventing fraud</li>
-                                <li>Complying with legal obligations and policies</li>
-                            </ul>
-                        </div>
-
-                        <div class="privacy-section">
-                            <h2>4. Data Sharing & Third Parties</h2>
-                            <p>We do not sell your personal information to third parties. However, we may share data with:</p>
-                            <ul>
-                                <li><strong>Service Providers:</strong> Cloud hosting, analytics, payment processors</li>
-                                <li><strong>Legal Requirements:</strong> When required by law or legal process</li>
-                                <li><strong>Business Transfers:</strong> In case of merger, acquisition, or asset sale</li>
-                                <li><strong>Partner Networks:</strong> Advertising and marketing partners (anonymized data)</li>
-                                <li><strong>Your Consent:</strong> When you explicitly authorize us to share</li>
-                            </ul>
-                        </div>
-
-                        <div class="privacy-section">
-                            <h2>5. Data Security</h2>
-                            <p>We implement industry-standard security measures including:</p>
-                            <ul>
-                                <li>SSL/TLS encryption for data transmission</li>
-                                <li>Secure password hashing and storage</li>
-                                <li>Regular security audits and updates</li>
-                                <li>Access controls and authentication mechanisms</li>
-                                <li>Firewalls and intrusion detection systems</li>
-                                <li>Regular data backups and disaster recovery plans</li>
-                            </ul>
-                            <p>However, no method of transmission over the internet is 100% secure. While we strive to protect your data, we cannot guarantee absolute security.</p>
-                        </div>
-
-                        <div class="privacy-section">
-                            <h2>6. Cookies & Tracking Technologies</h2>
-                            <p>We use cookies and similar technologies to:</p>
-                            <ul>
-                                <li>Remember your preferences and login information</li>
-                                <li>Track usage patterns and improve services</li>
-                                <li>Deliver personalized advertisements</li>
-                                <li>Analyze website traffic and user behavior</li>
-                            </ul>
-                            <p>You can manage cookie preferences through your browser settings. Disabling cookies may affect some functionality.</p>
-                        </div>
-
-                        <div class="privacy-section">
-                            <h2>7. Your Privacy Rights</h2>
-                            <p>You have the right to:</p>
-                            <ul>
-                                <li>Access your personal information</li>
-                                <li>Request correction of inaccurate data</li>
-                                <li>Request deletion of your data (subject to legal requirements)</li>
-                                <li>Opt-out of marketing communications</li>
-                                <li>Withdraw consent for data processing</li>
-                                <li>Request data portability</li>
-                                <li>Lodge complaints with data protection authorities</li>
-                            </ul>
-                            <p>To exercise these rights, contact us at privacy@vegamovies.pro</p>
-                        </div>
-
-                        <div class="privacy-section">
-                            <h2>8. Children's Privacy</h2>
-                            <p>Our services are not intended for children under 13 years old. We do not knowingly collect personal information from children under 13. If we learn we have collected information from a child under 13, we will delete such information and terminate the child's account.</p>
-                        </div>
-
-                        <div class="privacy-section">
-                            <h2>9. Data Retention</h2>
-                            <p>We retain personal information for as long as necessary to provide our services and fulfill the purposes outlined in this policy. You may request deletion of your account and associated data at any time. Some data may be retained for legal or compliance purposes.</p>
-                        </div>
-
-                        <div class="privacy-section">
-                            <h2>10. Third-Party Links</h2>
-                            <p>Our application may contain links to third-party websites and services. We are not responsible for their privacy practices. Please review their privacy policies before providing any information.</p>
-                        </div>
-
-                        <div class="privacy-section">
-                            <h2>11. International Data Transfer</h2>
-                            <p>Your information may be transferred to, stored in, and processed in countries other than your country of residence. These countries may have data protection laws different from your home country. By using our services, you consent to such transfer.</p>
-                        </div>
-
                         <div class="privacy-section">
                             <h2>12. Contact Us</h2>
                             <p>If you have questions about this Privacy Policy or our data practices, please contact us:</p>
@@ -852,19 +677,7 @@
                                 <li><strong>Email:</strong> privacy@vegamovies.pro</li>
                                 <li><strong>Support:</strong> support@vegamovies.pro</li>
                                 <li><strong>Telegram:</strong> https://t.me/+2Hmfkm_lYEdiNDll</li>
-                                <li><strong>Address:</strong> Vegamovies Pro, Digital Hub, 2026</li>
                             </ul>
-                        </div>
-
-                        <div class="privacy-section">
-                            <h2>13. Changes to Privacy Policy</h2>
-                            <p>We may update this Privacy Policy from time to time. Changes will be effective immediately upon posting to our website. Your continued use of the service constitutes acceptance of the updated Privacy Policy.</p>
-                        </div>
-
-                        <div class="privacy-section" style="border-top: 2px solid rgba(229, 9, 20, 0.1); padding-top: 30px;">
-                            <p style="text-align: center; color: #64748b; font-size: 12px;">
-                                <i class="fas fa-lock"></i> Your privacy is our priority. We are committed to transparency and protecting your rights.
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -906,6 +719,5 @@
             });
         });
     </script>
-  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9dd5021691b5cbb5',t:'MTc3YjY3NzIxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0ae2ecee1523b28',t:'MTgridIeMzE2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ </body>
 </html>
