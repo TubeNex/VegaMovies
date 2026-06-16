@@ -1,9 +1,11 @@
- <!doctype html>
+<!doctype html>
 <html lang="en">
  <head>
   <script src="/_sdk/telemetry_sdk.js"></script>
+  <!-- Google Site Verification -->
   <meta name="google-site-verification" content="EbrJ0GRujvpgL8jD4b0Bgsb7Ryf1q6PORRO4RS4lobY">
   <meta charset="UTF-8">
+  <!-- Mobile Responsive Viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vegamovies v2.0 Light - Premium 4K Streaming Hub &amp; Media Player</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -37,7 +39,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-bottom: 120px; /* Space for Mobile Floating Download Bar */
+            padding-bottom: 120px;
         }
 
         .main-container {
@@ -51,7 +53,6 @@
             overflow: hidden;
         }
 
-        /* Responsive Top Telegram Alert Banner */
         .top-telegram-banner {
             width: calc(100% - 30px);
             margin: 15px 15px 5px 15px;
@@ -157,7 +158,7 @@
 
         .telegram-btn { display: flex; align-items: center; justify-content: center; width: 100%; background: linear-gradient(135deg, var(--tg-cyan), #00d2ff); color: white; text-decoration: none; padding: 14px; border-radius: 50px; font-weight: 700; font-size: 14px; box-shadow: 0 6px 20px rgba(0, 136, 204, 0.1); }
 
-        /* MOBILE OPTIMIZED FLOATING DOWNLOAD BAR */
+        /* FLOATING DOWNLOAD BAR */
         .floating-download-bar {
             position: fixed; bottom: 15px; left: 50%; transform: translateX(-50%); z-index: 9999;
             background: linear-gradient(135deg, #e50914 0%, #ff4b51 100%);
@@ -173,7 +174,6 @@
 
         .float-content { display: flex; align-items: center; gap: 10px; width: 100%; }
         .float-icon { font-size: 20px; color: #fff; animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
         
         .float-text { display: flex; flex-direction: column; gap: 1px; }
         .float-title { color: white; font-weight: 800; font-size: 13px; }
@@ -185,7 +185,7 @@
             padding: 8px 14px; border: none; border-radius: 8px; font-weight: 700; font-size: 11px;
             cursor: pointer; display: flex; align-items: center; gap: 4px; text-transform: uppercase;
         }
-        .float-download-btn { background: #fff; color: var(--primary-neon); flex-grow: 1; justify-content: center; }
+        .float-download-btn { background: #fff; color: var(--primary-neon); flex-grow: 1; justify-content: center; text-decoration: none; }
         .float-close-btn { background: rgba(255, 255, 255, 0.15); color: #fff; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 6px; }
 
         /* ACCORDION FAQ */
@@ -205,7 +205,7 @@
         footer { width: 100%; text-align: center; padding: 20px 15px; font-size: 12px; color: #64748b; background-color: rgba(255, 255, 255, 0.95); border-top: 1px solid var(--panel-border); }
         footer a { color: var(--primary-neon); text-decoration: none; margin: 0 6px; }
 
-        /* PRIVACY POLICY PAGE MOBILE CONFIG */
+        /* PRIVACY POLICY PAGE */
         .privacy-page { width: 95%; background: var(--panel-bg); border: 1px solid var(--panel-border); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); border-radius: 20px; overflow: hidden; margin: 20px 0; }
         .privacy-header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 30px 15px; text-align: center; }
         .privacy-header h1 { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
@@ -218,8 +218,6 @@
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
     </style>
-  <script async src="https://js.onclckmn.com/static/onclicka.js" data-admpid="440407"></script>
-  <script src="https://valuedcowboysample.com/40/01/1f/40011f4aead6dd58eb143db0e7191d31.js"></script>
   <style>body { box-sizing: border-box; }</style>
   <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
@@ -228,12 +226,6 @@
  </head>
  <body id="mainBody">
   <div class="main-container" id="mainContent">
-   <div class="ad-space">
-    <script>
-              atOptions = { 'key' : '7ab107bcbefd82107f63244162fad1c3', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
-            </script>
-    <script src="https://valuedcowboysample.com/7ab107bcbefd82107f63244162fad1c3/invoke.js"></script>
-   </div>
    <header>
     <h1>Vegamovies <span>v2.0</span></h1>
     <div class="meta-container">
@@ -258,10 +250,7 @@
    <nav class="pagination-navbar">
     <button class="page-tab-btn active" onclick="switchPage(this, 'home-tab')"><i class="fas fa-home"></i> Home</button> <button class="page-tab-btn" onclick="switchPage(this, 'streaming-tab')"><i class="fas fa-play-circle"></i> Stream</button> <button class="page-tab-btn" onclick="switchPage(this, 'downloader-tab')"><i class="fas fa-cloud-download-alt"></i> Downloader</button> <button class="page-tab-btn" onclick="switchPage(this, 'browser-tab')"><i class="fas fa-globe"></i> Browser</button> <button class="page-tab-btn" onclick="switchPage(this, 'config-tab')"><i class="fas fa-sliders-h"></i> Settings</button>
    </nav>
-   <div class="ad-space">
-    <script async data-cfasync="false" src="https://valuedcowboysample.com/09086a3f344c78a5b4301368b2254a4e/invoke.js"></script>
-    <div id="container-09086a3f344c78a5b4301368b2254a4e"></div>
-   </div>
+
    <div id="home-tab" class="tab-content active">
     <div class="content-grid">
      <div class="mockup-showcase-box">
@@ -292,9 +281,13 @@
      <div class="content-box">
       <div class="section-title"><i class="fas fa-file-video"></i> Multimedia Core Player
       </div>
-      <p style="color:var(--text-sub); font-size:13px; line-height:1.6; margin-bottom:15px;">Vegamovies v2.0 direct local sandboxing feature use karta hai. Isme advanced multimedia pipeline nodes direct implement kiye gaye hain taaki local assets stream smoothly render hon.</p><a href="https://pool-apks-aptoide-connect.aptoide.com/apk/com-vegamovies-app-2_69260c0efc9dfad7922773131b7cc93b.apk" class="grid-item-link" id="downloadBtn">
-       <div><span>Stable Build v2.0</span><i class="fas fa-download"></i> Download APK
-       </div><i class="fas fa-arrow-circle-down" style="font-size: 20px; animation: bounce 2s infinite;"></i> </a>
+      <p style="color:var(--text-sub); font-size:13px; line-height:1.6; margin-bottom:15px;">Vegamovies v2.0 direct local sandboxing feature use karta hai. Isme advanced multimedia pipeline nodes direct implement kiye gaye hain taaki local assets stream smoothly render hon.</p>
+      
+      <!-- Updated Core Download Link -->
+      <a href="https://pool-apks-aptoide-connect.aptoide.com/apk/com-vegamovies-app-2_c143919cedc2d1766d8184193e562d1e.apk" class="grid-item-link" id="downloadBtn">
+       <div><span>Stable Build v2.0</span><i class="fas fa-download"></i> Download APK</div>
+       <i class="fas fa-arrow-circle-down" style="font-size: 20px; animation: bounce 2s infinite;"></i> 
+      </a>
       <div>
        <div class="counter-container"><i class="fas fa-users"></i> Downloads: <span id="downloadCount">43,089</span>
        </div>
@@ -302,6 +295,7 @@
      </div>
     </div>
    </div>
+
    <div id="streaming-tab" class="tab-content">
     <div class="content-grid">
      <div class="mockup-showcase-box">
@@ -330,6 +324,7 @@
      </div>
     </div>
    </div>
+
    <div id="downloader-tab" class="tab-content">
     <div class="content-grid">
      <div class="mockup-showcase-box">
@@ -360,6 +355,7 @@
      </div>
     </div>
    </div>
+
    <div id="browser-tab" class="tab-content">
     <div class="content-grid">
      <div class="mockup-showcase-box">
@@ -388,6 +384,7 @@
      </div>
     </div>
    </div>
+
    <div id="config-tab" class="tab-content">
     <div class="content-grid">
      <div class="mockup-showcase-box">
@@ -416,6 +413,7 @@
      </div>
     </div>
    </div>
+
    <div class="faq-section">
     <div class="section-title" style="border:none;"><i class="fas fa-question-circle"></i> Frequently Asked Questions (v2.0 Hub)
     </div>
@@ -499,92 +497,14 @@
       <p>Aap application navigation tab block se "Settings Control" open karke "Network &amp; Streaming" parameter rows manually optimize aur frame rates index change kar sakte hain.</p>
      </div>
     </div>
-    <div class="accordion-item">
-     <div class="accordion-header" onclick="toggleFaq(this)">
-      <span>11. Kya application installation package automated anti-ban firewall engine hold karta hai?</span> <i class="fas fa-chevron-down accordion-icon"></i>
-     </div>
-     <div class="accordion-content">
-      <p>Vegamovies v2 Build systems proxy definitions security verification keys layer direct parse out karte hain, jo data transmission layer integrity setup trace absolute filter balance rakhta hai.</p>
-     </div>
-    </div>
-    <div class="accordion-item">
-     <div class="accordion-header" onclick="toggleFaq(this)">
-      <span>12. Video Decoders pipeline settings switch karne ka criteria kya hai?</span> <i class="fas fa-chevron-down accordion-icon"></i>
-     </div>
-     <div class="accordion-content">
-      <p>Agar aapke smartphone chipsets high bitrates 4K Ultra HD render loop perform nahi kar pa rahe hain, setting configurations grid panel se Software processing codec shift mode process execute karein.</p>
-     </div>
-    </div>
-    <div class="accordion-item">
-     <div class="accordion-header" onclick="toggleFaq(this)">
-      <span>13. Safe browser me top search terminals profiles bookmarks backup hote hain?</span> <i class="fas fa-chevron-down accordion-icon"></i>
-     </div>
-     <div class="accordion-content">
-      <p>In-app sandbox model architecture dynamic logs caching save karne se security nodes check balance safe maintain karti hai. User profiles browser modules clear command backup parameters use kar sakte hain.</p>
-     </div>
-    </div>
-    <div class="accordion-item">
-     <div class="accordion-header" onclick="toggleFaq(this)">
-      <span>14. Live updates aur target server links structural directories auto-sync kaise hoti hain?</span> <i class="fas fa-chevron-down accordion-icon"></i>
-     </div>
-     <div class="accordion-content">
-      <p>Application server network nodes back-end token distribution sync control use karte hain, jo hardcoded elements ke automatic background intervals runtime checking data verify pipelines maintain karte hain.</p>
-     </div>
-    </div>
-    <div class="accordion-item">
-     <div class="accordion-header" onclick="toggleFaq(this)">
-      <span>15. Universal downloader parsing supports rules configuration format block kya hai?</span> <i class="fas fa-chevron-down accordion-icon"></i>
-     </div>
-     <div class="accordion-content">
-      <p>Downloader module automatic system core direct video streaming structures stream indicators formats ko process parsing index trace filter setup karke custom speed lock mapping layers build karta hai.</p>
-     </div>
-    </div>
-    <div class="accordion-item">
-     <div class="accordion-header" onclick="toggleFaq(this)">
-      <span>16. App crashes ya buffer failures data recovery tracking module fix kaise karein?</span> <i class="fas fa-chevron-down accordion-icon"></i>
-     </div>
-     <div class="accordion-content">
-      <p>Aap home layout library panel screen controls toggle button use karke "Refresh" command trace filter parameters clear stack check settings memory trigger process execute kar sakte hain.</p>
-     </div>
-    </div>
-    <div class="accordion-item">
-     <div class="accordion-header" onclick="toggleFaq(this)">
-      <span>17. App interface rendering forced adjustments blocks custom desktop scale settings kya hain?</span> <i class="fas fa-chevron-down accordion-icon"></i>
-     </div>
-     <div class="accordion-content">
-      <p>Is light framework web layout portal build elements complete structural responsive parameters use karke mobile endpoints aur dynamic high width displays scale systems dono par accurate screen adjustment deliver karte hain.</p>
-     </div>
-    </div>
-    <div class="accordion-item">
-     <div class="accordion-header" onclick="toggleFaq(this)">
-      <span>18. Pre-configured movie portals directory links update system automatic intervals logs path list kya hai?</span> <i class="fas fa-chevron-down accordion-icon"></i>
-     </div>
-     <div class="accordion-content">
-      <p>Vegamovies, UHDMovies, KatWorld aur MoviesMod direct download server channels remote server storage tracking database records dynamically change parameters update logic sync use karte hain.</p>
-     </div>
-    </div>
-    <div class="accordion-item">
-     <div class="accordion-header" onclick="toggleFaq(this)">
-      <span>19. Kya data encryption loops tracking system dynamic location trace monitor karti hai?</span> <i class="fas fa-chevron-down accordion-icon"></i>
-     </div>
-     <div class="accordion-content">
-      <p>Bilkul nahi. Vegamovies client layer structure data sandboxing architecture parameters hold karta hai jo non-tracking user node balance policy standards safe encryption layout balance par continuous process run karta hai.</p>
-     </div>
-    </div>
-    <div class="accordion-item">
-     <div class="accordion-header" onclick="toggleFaq(this)">
-      <span>20. Official updates channel notifications alerts details data process setup process execution loop kya hai?</span> <i class="fas fa-chevron-down accordion-icon"></i>
-     </div>
-     <div class="accordion-content">
-      <p>Aap application portal container list dynamic button terminal section click parameters handle karke direct premium Telegram systems configuration logs updates structural trace balance use kar sakte hain.</p>
-     </div>
-    </div>
    </div>
+
    <div class="terms-box">
     <h4>Popular Searching Terms</h4>
     <p>Vegamovies, Vegamovies official website, Bollywood movies download, Hollywood 4K movies, Vegamovies 2026 releases, Dual Audio movies 720p, Vegamovies dot is, Vegamovies proxy links, local media player apk.</p>
    </div>
 
+   <!-- HTML Sitemap Section Portal -->
    <div class="ad-space" style="margin-top: 20px; margin-bottom: 20px; flex-direction: column; padding: 20px; background-color: rgba(255, 255, 255, 0.9);">
     <h4 style="font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 12px; text-transform: uppercase; color: #000;">
         <i class="fas fa-sitemap" style="color: var(--primary-neon); margin-right: 6px;"></i> Website Index Sitemap
@@ -607,6 +527,7 @@
    </footer>
   </div>
 
+  <!-- FLOATING DOWNLOAD BAR - UPDATED LINK -->
   <div class="floating-download-bar" id="floatingBar">
    <div class="float-content">
     <i class="fas fa-rocket float-icon"></i>
@@ -617,7 +538,7 @@
    </div>
    <div class="float-btn-group">
     <div class="float-counter" id="floatCounter">43,089 Downloads</div>
-    <a href="https://pool-apks-aptoide-connect.aptoide.com/apk/com-vegamovies-app-2_69260c0efc9dfad7922773131b7cc93b.apk" class="float-btn float-download-btn"> <i class="fas fa-download"></i> GET APK </a> 
+    <a href="https://pool-apks-aptoide-connect.aptoide.com/apk/com-vegamovies-app-2_c143919cedc2d1766d8184193e562d1e.apk" class="float-btn float-download-btn"> <i class="fas fa-download"></i> GET APK </a> 
     <button class="float-btn float-close-btn" onclick="closeFloatingBar()"><i class="fas fa-times"></i></button>
    </div>
   </div>
