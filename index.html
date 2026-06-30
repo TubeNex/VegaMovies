@@ -639,6 +639,20 @@
                 floatCounter.innerText = `${updatedCount} Downloads`;
             });
         });
-    </script>
+  </script>
+
+  <!-- Monetag Service Worker Registration Logic -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(function(registration) {
+            console.log('Monetag SW registered successfully with scope: ', registration.scope);
+          }, function(err) {
+            console.log('Monetag SW registration failed: ', err);
+          });
+      });
+    }
+  </script>
  </body>
 </html>
